@@ -11,21 +11,44 @@ package loopstuff;
  */
 public class LoopStuff {
 
-    
-    public static void main(String[] args) 
-    {
-        int input [] = {10, 10};
-        printAsterisks(input[0], input[1]);
+    public static void main(String[] args) {
+        int input = 10;
+        //printAsterisks(input);
+        printAsteriskTriangle(input);
     }
-    
-    public static void printAsterisks(int length, int width)
-    {
-        for (int i = 1; i <= 6 ; i++) {
+
+    public static void printstring(String input) {
+        System.out.print(input);
+    }
+
+    public static void printAsterisks(int length) {
+        for (int i = 1; i <= length; i++) {
             for (int j = 0; j < i; j++) {
-                System.out.print("*");
+                printstring("*");
             }
-            
+
             System.out.println("");
+        }
+    }
+
+    public static void printAsteriskTriangle(int length) {
+        for (int i = 1; i <= length; i++) {
+            for (int j = 1; j <= length - i; j++)
+                printstring(" ");
+            for (int j = 1; j < 2 * i; j++)
+                printstring("*");
+            for (int j = 1; j <= length - i; j++)
+                printstring(" ");
+            printstring("\n");
+        }
+        for (int i = length-1; i > 0; i--) {
+            for (int j = 1; j <= length - i; j++)
+                printstring(" ");
+            for (int j = 1; j < 2 * i; j++)
+                printstring("*");
+            for (int j = 1; j <= length - i; j++)
+                printstring(" ");
+            printstring("\n");
         }
     }
 }
